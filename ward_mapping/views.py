@@ -40,9 +40,8 @@ def index_asJSON(request, year):
         sort_by = "-" + sort_by
 
     query = request.POST.get("search[value]", "").strip()
-    total_count = Map2011.objects.all().count() if year == 2011 else Map2014.objects.all().count()
 
-    print(total_count)
+    total_count = Map2011.objects.all().count() if year == 2011 else Map2014.objects.all().count()
 
     if query:
         if year == 2011:
