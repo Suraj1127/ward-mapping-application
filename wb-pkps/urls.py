@@ -20,6 +20,6 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ward-wb-pkps/', include('ward_mapping.urls')),
+    path('ward-mapping/', include('ward_mapping.urls')),
     path('', views.index)
 ]
