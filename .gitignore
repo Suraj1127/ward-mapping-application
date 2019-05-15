@@ -1,0 +1,7 @@
+*.ipynb
+__pycache__/
+*.pyc
+.idea/
+JS App/
+.ipynb_checkpoints
+
