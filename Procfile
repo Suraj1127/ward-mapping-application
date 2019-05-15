@@ -1,1 +1,2 @@
-web: gunicorn wb-pkps.wsgi --log-file-
+web: gunicorn wb-pkps.wsgi:application --log-file -
+
