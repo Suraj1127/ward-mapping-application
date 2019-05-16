@@ -1,5 +1,3 @@
-import sys
-
 import csv
 from .models import Map2011, Map2014
 
@@ -47,7 +45,3 @@ def upload(year):
                 )
             else:
                 pass
-
-
-if __name__ == "__main__":
-    upload(sys.argv[1])

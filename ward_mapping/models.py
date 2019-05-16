@@ -8,7 +8,7 @@ class Map2011(models.Model):
     old_survey_vdc_name = models.CharField(max_length=100)
     old_survey_vdc_code = models.CharField(max_length=30)
     old_ward_no = models.PositiveSmallIntegerField()
-    old_survey_ward_code = models.CharField(max_length=30)
+    old_survey_ward_code = models.CharField(max_length=30, unique=True)
     province = models.PositiveSmallIntegerField()
     new_district = models.CharField(max_length=30)
     cbs_district_code = models.PositiveSmallIntegerField()
