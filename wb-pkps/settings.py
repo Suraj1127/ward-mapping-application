@@ -126,12 +126,10 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, "static"),
 # )
 
-
 # PROJECT_ROOT = os.path.join(os.path.abspath(__file__))
 STATIC_ROOT = 'staticfiles'
 
-
 # for heroku database
 import dj_database_url
-prod_db  =  dj_database_url.config(conn_max_age=500)
+prod_db = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(prod_db)

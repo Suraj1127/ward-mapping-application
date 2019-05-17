@@ -6,9 +6,12 @@ from django.shortcuts import render
 from .models import Map2011, Map2014
 from django.db.models import Q
 
+from django.contrib.auth.decorators import login_required
+
 from .data_accumulator import upload
 
 
+@login_required(login_url='/admin/login')
 def accumulate(request, year):
     if request.method == "POST":
         upload(year)
