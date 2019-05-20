@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-      {% load static %}
-      <meta charset="utf-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-      <title>Old Wards to New Wards Mapping</title>
-      <meta name="author" content="Suraj Regmi">
-      <meta content="Mapping of old wards to new wards under new federal structure of Nepal" />
+{% extends 'base.html' %}
 
-      <!-- Bootstrap core CSS -->
-      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-      <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
+{% block title %}
+{{ year }} to 2018 Ward Level Mapping
+{% endblock %}
 
-      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-      <!--[if lt IE 9]>
-      <script type="text/javascript" src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script type="text/javascript" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-  </head>
+{% block content %}
+<body>
 
-  <body>
-    <table id="ajax-mapping-table" class="table-striped">
-        <thead>
+
+    <div style="padding: 20px;">
+
+        <div>
+            <h2 class="text-center" style="font-weight: bold;">Old Wards {{ year }} to New Wards 2018 Mapping</h2>
+            <hr style="width: 20%;">
+        </div>
+
+        <table id="ajax-mapping-table" class="table-striped table-responsive">
+            <thead>
             <tr>
                 {% if year == 2011 %}
                 <th>Zone</th>
@@ -63,17 +56,24 @@
 
 
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 
+    <div>
+        <hr>
+        <h4 style="color: #444; font-weight: bold; text-align: center;">Work done by Nepal Poverty Team, The World Bank</h4>
+        <p class="text-center">For original CSV files, refer <a href="https://github.com/Suraj1127/nepal_wards_mapping">here</a>.</p>
+    </div>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.12/jquery.csv.min.js"></script>
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.12/jquery.csv.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 
-    <script type="text/javascript" class="init">
+        <script type="text/javascript" class="init">
         $(document).ready(function() {
             console.log({{ year }});
             if ({{ year }} == 2011)
@@ -135,5 +135,147 @@
             }
         });
     </script>
-  </body>
-</html>
+</body>
+{% endblock %}
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--  <head>-->
+<!--      {% load static %}-->
+<!--      <meta charset="utf-8">-->
+<!--      <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--      <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+
+<!--      &lt;!&ndash; The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags &ndash;&gt;-->
+<!--      <title>Old Wards to New Wards Mapping</title>-->
+<!--      <meta name="author" content="Suraj Regmi">-->
+<!--      <meta content="Mapping of old wards to new wards under new federal structure of Nepal" />-->
+
+<!--      &lt;!&ndash; Bootstrap core CSS &ndash;&gt;-->
+<!--      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">-->
+<!--      <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">-->
+
+<!--      &lt;!&ndash; HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries &ndash;&gt;-->
+<!--      &lt;!&ndash;[if lt IE 9]>-->
+<!--      <script type="text/javascript" src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>-->
+<!--      <script type="text/javascript" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>-->
+<!--      <![endif]&ndash;&gt;-->
+<!--  </head>-->
+
+<!--  <body>-->
+<!--    <table id="ajax-mapping-table" class="table-striped table-responsive">-->
+<!--        <thead>-->
+<!--            <tr>-->
+<!--                {% if year == 2011 %}-->
+<!--                <th>Zone</th>-->
+<!--                <th>District</th>-->
+<!--                <th>Old Survey VDC Name 2011</th>-->
+<!--                <th>Old Survey VDC Code 2011</th>-->
+<!--                <th>Old Ward No 2011</th>-->
+<!--                <th>Old Survey Ward Code 2011</th>-->
+<!--                <th>Province</th>-->
+<!--                <th>New District 2018</th>-->
+<!--                <th>CBS District Code 2018</th>-->
+<!--                <th>Category of LU 2018</th>-->
+<!--                <th>LU Name 2018</th>-->
+<!--                <th>LU Full Name 2018</th>-->
+<!--                <th>LU Name Nepali 2018</th>-->
+<!--                <th>CBS LU Code 2018</th>-->
+<!--                <th>LU Ward No 2018</th>-->
+<!--                <th>CBS LU Ward Code 2018</th>-->
+
+<!--                {% elif year == 2014 %}-->
+
+<!--                <th>District</th>-->
+<!--                <th>VDC/Municipality Name</th>-->
+<!--                <th>Ward Number</th>-->
+<!--                <th>Province</th>-->
+<!--                <th>CBS District Code</th>-->
+<!--                <th>Category of LU</th>-->
+<!--                <th>LU Name</th>-->
+<!--                <th>LU Full Name</th>-->
+<!--                <th>LU Name Nepali</th>-->
+<!--                <th>LU HLCIT Code</th>-->
+<!--                <th>CBS LU Code</th>-->
+<!--                <th>LU Ward No</th>-->
+<!--                <th>CBS Ward Code</th>-->
+
+<!--                {% endif %}-->
+
+
+<!--            </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+
+<!--        </tbody>-->
+<!--    </table>-->
+
+<!--    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>-->
+<!--    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.8.12/jquery.csv.min.js"></script>-->
+<!--    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>-->
+
+<!--    <script type="text/javascript" class="init">-->
+<!--        $(document).ready(function() {-->
+<!--            console.log({{ year }});-->
+<!--            if ({{ year }} == 2011)-->
+<!--            {-->
+<!--                console.log('2011');-->
+<!--                $('#ajax-mapping-table').DataTable({-->
+<!--                    "processing": true,-->
+<!--                    'serverSide': true,-->
+<!--                    "ajax": {-->
+<!--                        "processing": true,-->
+<!--                        "url": "{% url 'my_ajax_url' year %}",-->
+<!--                        "type": "POST",-->
+<!--                    },-->
+<!--                    "columns": [-->
+<!--                        {"data": "fields.zone"},-->
+<!--                        {"data": "fields.district"},-->
+<!--                        {"data": "fields.old_survey_vdc_name"},-->
+<!--                        {"data": "fields.old_survey_vdc_code"},-->
+<!--                        {"data": "fields.old_ward_no"},-->
+<!--                        {"data": "fields.old_survey_ward_code"},-->
+<!--                        {"data": "fields.province"},-->
+<!--                        {"data": "fields.new_district"},-->
+<!--                        {"data": "fields.cbs_district_code"},-->
+<!--                        {"data": "fields.category_of_lu"},-->
+<!--                        {"data": "fields.lu_name"},-->
+<!--                        {"data": "fields.lu_full_name"},-->
+<!--                        {"data": "fields.lu_name_nepali"},-->
+<!--                        {"data": "fields.cbs_lu_code"},-->
+<!--                        {"data": "fields.lu_ward_no"},-->
+<!--                        {"data": "fields.cbs_ward_code"},-->
+<!--                    ],-->
+<!--                });-->
+<!--            } else if ({{ year }} == 2014) {-->
+<!--                console.log('haha');-->
+<!--                $('#ajax-mapping-table').DataTable({-->
+<!--                    "processing": true,-->
+<!--                    'serverSide': true,-->
+<!--                    "ajax": {-->
+<!--                        "processing": true,-->
+<!--                        "url": "{% url 'my_ajax_url' year %}",-->
+<!--                        "type": "POST",-->
+<!--                    },-->
+<!--                    "columns": [-->
+<!--                        {"data": "fields.district"},-->
+<!--                        {"data": "fields.vdc_muni"},-->
+<!--                        {"data": "fields.old_ward_no"},-->
+<!--                        {"data": "fields.province"},-->
+<!--                        {"data": "fields.cbs_district_code"},-->
+<!--                        {"data": "fields.category_of_lu"},-->
+<!--                        {"data": "fields.lu_name"},-->
+<!--                        {"data": "fields.lu_full_name"},-->
+<!--                        {"data": "fields.lu_name_nepali"},-->
+<!--                        {"data": "fields.lu_hlcit_code"},-->
+<!--                        {"data": "fields.lu_cbs_code"},-->
+<!--                        {"data": "fields.new_ward_no"},-->
+<!--                        {"data": "fields.cbs_ward_code"},-->
+<!--                    ],-->
+<!--                });-->
+<!--            }-->
+<!--        });-->
+<!--    </script>-->
+<!--  </body>-->
+<!--</html>-->

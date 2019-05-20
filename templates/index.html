@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>The World Bank -- Nepal Poverty Team</title>
-</head>
-<body>
-Homepage for PKPS Team
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}
+The World Bank -- Nepal Poverty Team
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row" style="padding: 40px;">
+        <div class="col-md-6 text-center">
+            <button style="height: 300px; width: 300px; border: 10px solid; border-radius: 50%;  font-size: 30px;" class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="location.href='/ward-mapping/2011-to-2018'">2011 Mapping</button>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <button style="height: 300px; width: 300px; border: 10px solid; border-radius: 50%;  font-size: 30px;" class="btn btn-outline-success my-2 my-sm-0" type="submit" onclick="location.href='/ward-mapping/2014-to-2018'">2014 Mapping</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
